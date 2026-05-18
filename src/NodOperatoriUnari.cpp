@@ -1,7 +1,7 @@
 #include "NodOperatoriUnari.h"
 
 #include <cmath>
-
+//
 double NodSin::evalueaza() const
 {
     return std::sin(copil->evalueaza());

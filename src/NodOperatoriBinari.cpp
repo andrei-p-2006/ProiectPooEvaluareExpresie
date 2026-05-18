@@ -2,7 +2,7 @@
 #include "MathException.h"
 
 #include <cmath>
-
+//
 double NodAdunare::evalueaza() const
 {
     return stanga->evalueaza()+dreapta->evalueaza();

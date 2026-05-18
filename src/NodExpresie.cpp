@@ -1,7 +1,7 @@
 #include "NodExpresie.h"
 
 #include <stack>
-
+//
 using namespace std;
 
 map<string,double> NodExpresie::tabelVariabile;

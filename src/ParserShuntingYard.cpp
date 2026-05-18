@@ -11,7 +11,7 @@
 #include <stack>
 #include <string>
 #include <vector>
-
+//
 NodExpresie* ParserShuntingYard::parseaza(const std::string& expresie)
 {
     if (!NodExpresie::valideazaParanteze(expresie))
@@ -97,7 +97,7 @@ std::vector<std::string> ParserShuntingYard::laPostfixat(const std::vector<std::
 {
     std::vector<std::string> iesire;
     std::stack<std::string> stivaOp;
-    std::string prev;
+    //std::string prev;
     for (const auto& tok : tokens)
     {
         if (tok == "(")
@@ -148,7 +148,7 @@ std::vector<std::string> ParserShuntingYard::laPostfixat(const std::vector<std::
         {
             iesire.push_back(tok);
         }
-        prev = tok;
+        //prev = tok;
     }
     while (!stivaOp.empty())
     {
@@ -223,8 +223,8 @@ void ParserShuntingYard::simplificaArbore(NodExpresie*& radacina)
         if (st != binar->getStanga()) binar->setStanga(st);
         if (dr != binar->getDreapta()) binar->setDreapta(dr);
 
-        auto* vStg = dynamic_cast<NodValoare*>(binar->getStanga());
-        auto* vDr  = dynamic_cast<NodValoare*>(binar->getDreapta());
+        const auto* vStg = dynamic_cast<NodValoare*>(binar->getStanga());
+        const auto* vDr  = dynamic_cast<NodValoare*>(binar->getDreapta());
         if (vStg && vDr && vStg->esteConstanta() && vDr->esteConstanta())
         {
             const double rezultat = binar->evalueaza();
@@ -234,13 +234,14 @@ void ParserShuntingYard::simplificaArbore(NodExpresie*& radacina)
         return;
     }
 
-    if (auto* unar = dynamic_cast<NodOperatorUnar*>(radacina))
+    auto* unar=dynamic_cast<NodOperatorUnar*>(radacina);
+    if (unar)
     {
         NodExpresie* c = unar->getCopil();
         simplificaArbore(c);
         if (c != unar->getCopil()) unar->setCopil(c);
 
-        auto* val = dynamic_cast<NodValoare*>(unar->getCopil());
+        const auto* val = dynamic_cast<NodValoare*>(unar->getCopil());
         if (val && val->esteConstanta())
         {
             const double rezultat = unar->evalueaza();
@@ -259,11 +260,12 @@ int ParserShuntingYard::numaraFunctiiTrigonometrice(NodExpresie* radacina)
     {
         ++total;
     }
-    if (auto* binar = dynamic_cast<NodOperatorBinar*>(radacina))
+    const auto* binar = dynamic_cast<NodOperatorBinar*>(radacina);
+    if (binar)
     {
         total += numaraFunctiiTrigonometrice(binar->getStanga());
         total += numaraFunctiiTrigonometrice(binar->getDreapta());
-    } else if (auto* unar = dynamic_cast<NodOperatorUnar*>(radacina))
+    } else if (const auto* unar = dynamic_cast<NodOperatorUnar*>(radacina))
     {
         total += numaraFunctiiTrigonometrice(unar->getCopil());
     }

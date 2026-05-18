@@ -3,7 +3,7 @@
 #include "NodOperatoriBinari.h"
 #include "NodOperatoriUnari.h"
 #include "MathException.h"
-
+//
 #include <cctype>
 #include <stdexcept>
 
@@ -15,7 +15,7 @@ namespace {
         if (s.empty())
             return false;
 
-        int i = 0;
+        std::size_t i = 0;
         if (s[0]=='+' || s[0]=='-')
         {
             if (s.size() == 1)

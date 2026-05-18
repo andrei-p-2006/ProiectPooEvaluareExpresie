@@ -2,7 +2,7 @@
 #define NOD_FACTORY_H
 
 #include <string>
-
+//
 class NodExpresie;
 
 class NodFactory {

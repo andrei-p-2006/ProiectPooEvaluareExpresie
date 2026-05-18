@@ -1,5 +1,5 @@
 #include "NodOperatorUnar.h"
-
+//
 NodOperatorUnar::NodOperatorUnar(NodExpresie* c) : copil(c) {}
 
 NodOperatorUnar::NodOperatorUnar(const NodOperatorUnar& other): NodExpresie(other),

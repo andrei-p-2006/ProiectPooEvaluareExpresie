@@ -4,7 +4,7 @@
 #include "NodExpresie.h"
 
 #include <string>
-
+//
 class NodValoare : public NodExpresie {
     double valoare;
     std::string numeVariabila;

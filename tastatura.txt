@@ -1,2 +1,13 @@
-5
-11 22 33 44 55
+2+3+4
+x+2
+2+3*x
+2*x+3*y
+(x+2)*(y+4)
+x+y+z
+
+Se citeste expresia.
+Apoi se citeste nr de necunoscute.
+Apoi numele si valoarea cu care sa fie inlocuite.
+In cazul in care la o necunoscuta nu dai valoare,
+    daca aceasta a aparut la o expresie precedenta din aceeasi rulare se foloseste valoarea deja atribuita
+    altfel va da un mesaj cum ca ca trebuie sa-i asociezi valoare.

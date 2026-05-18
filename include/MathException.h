@@ -3,7 +3,7 @@
 
 #include <exception>
 #include <string>
-
+//
 class MathException : public std::exception {
     std::string mesaj;
 public:

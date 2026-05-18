@@ -1,10 +1,11 @@
 #include "MeniuInteractiv.h"
-
+//
 #include "MathException.h"
 #include "NodExpresie.h"
 #include "Parser.h"
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 
 using namespace std;
 

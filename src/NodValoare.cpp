@@ -2,7 +2,7 @@
 #include "MathException.h"
 
 #include <utility>
-
+//
 NodValoare::NodValoare(double v) : valoare(v), numeVariabila() {}
 
 NodValoare::NodValoare(std::string nume) : valoare(0.0), numeVariabila(std::move(nume)) {}

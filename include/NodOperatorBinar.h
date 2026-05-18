@@ -2,7 +2,7 @@
 #define NOD_OPERATOR_BINAR_H
 
 #include "NodExpresie.h"
-
+//
 #include <iosfwd>
 
 class NodOperatorBinar : public NodExpresie {
@@ -19,8 +19,6 @@ public:
     [[nodiscard]] NodExpresie* getDreapta() const { return dreapta; }
     void setStanga(NodExpresie* s);
     void setDreapta(NodExpresie* d);
-
-    [[nodiscard]] virtual char simbol() const = 0;
 
     bool operator==(const NodOperatorBinar& other) const;
 

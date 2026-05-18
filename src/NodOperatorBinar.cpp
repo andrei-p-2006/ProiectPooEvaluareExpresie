@@ -3,7 +3,7 @@
 
 #include <istream>
 #include <typeinfo>
-
+//
 NodOperatorBinar::NodOperatorBinar(NodExpresie* s, NodExpresie* d): stanga(s),dreapta(d) {}
 
 NodOperatorBinar::NodOperatorBinar(const NodOperatorBinar& other):
